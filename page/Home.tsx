@@ -12,7 +12,7 @@ export default function Home({navigation} : any) {
     {id : 3, title : "고집센 도토리", content : "TEST"}
   ];
   function selectBook() {
-    navigation.navigate('book');
+    navigation.navigate('book', {id : 0});
   }
   return (
     <View style={styles.container}>
