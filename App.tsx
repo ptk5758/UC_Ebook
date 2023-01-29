@@ -22,13 +22,13 @@ export default function App() {
 }
 function Book() {
   return(
-    <View>
+    <View style={styles.book}>
       {/* <Image source={{uri : './static/book/1/thum.PNG'}} style={{width : 100, height : 100}}/> */}
       <Image
           source={require('./static/book/1/thum.png')}
-          style={{width: 200, height: 200}}
+          style={{width: 180, height: 180}}
         />
-      <Text>고집센</Text>
+      <Text style={{fontWeight : 'bold', paddingTop : 12}}>고집센</Text>
     </View>
   )
 }
@@ -36,8 +36,14 @@ function Book() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor : "#65fc81",
+    alignItems : 'center'
   },
+  book : {
+    backgroundColor : "#eeeeee",
+    margin : 10,
+    width : 320,
+    alignItems : 'center',
+    padding : 15
+  }
 });
