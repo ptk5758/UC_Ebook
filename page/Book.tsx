@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableHighlight, Image } from "react-native";
 interface Book {
     id : number;
+}
+interface Page {
+    imgElement : JSX.Element
 }
 export default function(props : any) {            
     const book : Book = props.route.params;
@@ -20,9 +23,32 @@ export default function(props : any) {
 }
 
 function Book1() {    
+    const MAX_PAGE = 28;    
+    const story = [
+        {
+            imgElement : <Image source={require('../static/book/1/page (1).png')}/>
+        },
+        {
+            imgElement : <Image source={require('../static/book/1/page (2).png')}/>
+        },
+        {
+            imgElement : <Image source={require('../static/book/1/page (3).png')}/>
+        },
+        {
+            imgElement : <Image source={require('../static/book/1/page (4).png')}/>
+        },
+        {
+            imgElement : <Image source={require('../static/book/1/page (5).png')}/>
+        },
+    ]
+    const [now, setNow] = useState<Page>(story[0]);
+    const [page, setPage] = useState<number>(0);
+    
     return(
         <View>
-            <Text>1번책</Text>
+            <TouchableHighlight>
+                { now.imgElement }
+            </TouchableHighlight>
         </View>
     );
 }
