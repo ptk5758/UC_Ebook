@@ -5,10 +5,24 @@ interface Book {
 }
 export default function(props : any) {            
     const book : Book = props.route.params;
-    const [now, setNow] = useState<number>(0);
+    const SelectBook = function() {
+        if(book.id == 0) {
+            return <Book1/>;
+        } else {
+            return <View><Text>Error</Text></View>;
+        }
+    }
     return(
         <View>
-            <Text>{book.id} 책이다..</Text>
+            <SelectBook/>
+        </View>
+    );
+}
+
+function Book1() {    
+    return(
+        <View>
+            <Text>1번책</Text>
         </View>
     );
 }
