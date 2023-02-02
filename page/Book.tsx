@@ -3,9 +3,26 @@ import { View, Text, TouchableHighlight, Image } from "react-native";
 interface Book {
     id : number;
 }
-interface Page {
+interface IPage {
     imgElement : JSX.Element
 }
+const story : IPage[] = [
+    {
+        imgElement : <Image source={require('../static/book/1/page(1).png')}/>
+    },
+    {
+        imgElement : <Image source={require('../static/book/1/page(2).png')}/>
+    },
+    {
+        imgElement : <Image source={require('../static/book/1/page(3).png')}/>
+    },
+    {
+        imgElement : <Image source={require('../static/book/1/page(4).png')}/>
+    },
+    {
+        imgElement : <Image source={require('../static/book/1/page(5).png')}/>
+    },
+]  
 export default function(props : any) {            
     const book : Book = props.route.params;
     const SelectBook = function() {
@@ -24,29 +41,18 @@ export default function(props : any) {
 
 function Book1() {    
     const MAX_PAGE = 28;    
-    const story = [
-        {
-            imgElement : <Image source={require('../static/book/1/page (1).png')}/>
-        },
-        {
-            imgElement : <Image source={require('../static/book/1/page (2).png')}/>
-        },
-        {
-            imgElement : <Image source={require('../static/book/1/page (3).png')}/>
-        },
-        {
-            imgElement : <Image source={require('../static/book/1/page (4).png')}/>
-        },
-        {
-            imgElement : <Image source={require('../static/book/1/page (5).png')}/>
-        },
-    ]
-    const [now, setNow] = useState<Page>(story[0]);
+      
     const [page, setPage] = useState<number>(0);
+    const [now, setNow] = useState<IPage>(story[page]);
+    function nextPage() {        
+        setNow(story[page+1]);
+        setPage(page + 1);     
+    }
+    
     
     return(
         <View>
-            <TouchableHighlight>
+            <TouchableHighlight onPress={nextPage}>
                 { now.imgElement }
             </TouchableHighlight>
         </View>
