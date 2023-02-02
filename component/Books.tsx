@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { View, Text, TouchableHighlight, Image } from "react-native";
+import { Audio } from 'expo-av';
 
 interface IPage {
     imgElement : JSX.Element
 }
 
 export function BookA() {    
+    const [sound, setSound] = useState();
+    Audio.Sound.createAsync(require('../static/book/1/sound/Hello.mp3'))
+    .then((obj)=>{
+        obj.sound.playAsync()
+        .then(data => console.log(data))
+    });
     const MAX_PAGE = 28;    
     const story : IPage[] = [
         {
