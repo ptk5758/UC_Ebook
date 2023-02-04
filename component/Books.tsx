@@ -25,27 +25,7 @@ export function BookA() {
     const story : IPage[] = [
         {
             imgElement : <Image style={style.image} source={require('../static/book/1/page(1).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page1.mp3'))
-        },
-        {
-            imgElement : <Image style={style.image} source={require('../static/book/1/page(2).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page2.mp3'))
-        },
-        {
-            imgElement : <Image style={style.image} source={require('../static/book/1/page(3).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page3.mp3'))
-        },
-        {
-            imgElement : <Image style={style.image} source={require('../static/book/1/page(4).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page4.mp3'))
-        },
-        {
-            imgElement : <Image style={style.image} source={require('../static/book/1/page(5).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page5.mp3'))
-        },
-        {
-            imgElement : <Image style={style.image} source={require('../static/book/1/page(6).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page6.mp3'))
+            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page1.mp3'), {isLooping : true})
         }
     ]    
       
