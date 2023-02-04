@@ -53,13 +53,14 @@ export function BookA() {
     const [page, setPage] = useState<number>(0);
     const [now, setNow] = useState<IPage>(story[page]);
     function nextPage() {        
-        setNow(story[page+1]);
+        setNow({...story[page+1]});
         setPage(page + 1);
         now.soundPlay ? now.soundPlay
         .then(obj => {
-            obj.sound.playAsync();
+            obj.sound.playAsync()
+            .catch(err => console.log(err))            
             setSound(obj);
-        })
+        })        
         : () => {setSound(null)};
     }   
     useEffect(()=>{
