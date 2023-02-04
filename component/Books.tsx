@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { View, Text, TouchableHighlight, Image } from "react-native";
 import { Audio } from 'expo-av';
 import { SoundObject } from "expo-av/build/Audio";
@@ -50,6 +50,12 @@ export function BookA() {
         })
         : () => {setSound(null)};
     }   
+    useEffect(()=>{
+        return sound ? () => {
+            sound.sound.unloadAsync()
+        }   
+        : undefined     
+    }, [sound]);
     
     return(
         <View>
