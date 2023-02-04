@@ -1,40 +1,49 @@
-import { useEffect, useState } from "react";
-import { View, Text, TouchableHighlight, Image } from "react-native";
+import { ReactNode, useEffect, useState } from "react";
+import { View, Text, TouchableHighlight, Image, StyleSheet } from "react-native";
 import { Audio } from 'expo-av';
 import { SoundObject } from "expo-av/build/Audio";
 
 interface IPage {
-    imgElement : JSX.Element;
+    // imgElement : JSX.Element;
     soundPlay? : Promise<SoundObject>;
+    PageImage : (props : {style : any}) => JSX.Element
 }
 
-export function BookA() {    
-    
-    // Audio.Sound.createAsync(require('../static/book/1/sound/Hello.mp3'))
-    // .then((obj)=>{
-    //     obj.sound.playAsync()
-    //     .then(data => console.log(data))
-    // });    
+export function BookA() {
+    const style = StyleSheet.create({
+        page : {
+            width : 180,
+            height : 180
+        }
+    });
     const story : IPage[] = [
         {
-            imgElement : <Image source={require('../static/book/1/page(1).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/Hello.mp3'))
+            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page1.mp3')),
+            PageImage : (props : {style : any}) => {return <Image source={require('../static/book/1/page(1).png')}/> }
         },
         {
-            imgElement : <Image source={require('../static/book/1/page(2).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/Hello.mp3'))
+            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page2.mp3')),
+            PageImage : (props : {style : any}) => {return <Image source={require('../static/book/1/page(2).png')}/> }
         },
         {
-            imgElement : <Image source={require('../static/book/1/page(3).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page3.mp3'))
+            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page3.mp3')),
+            PageImage : (props : {style : any}) => {return <Image source={require('../static/book/1/page(3).png')}/> }
         },
         {
-            imgElement : <Image source={require('../static/book/1/page(4).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page4.mp3'))
+            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page4.mp3')),
+            PageImage : (props : {style : any}) => {return <Image source={require('../static/book/1/page(4).png')}/> }
         },
         {
-            imgElement : <Image source={require('../static/book/1/page(5).png')}/>,
-            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page5.mp3'))
+            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page5.mp3')),
+            PageImage : (props : {style : any}) => {return <Image source={require('../static/book/1/page(5).png')}/> }
+        },
+        {
+            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page6.mp3')),
+            PageImage : (props : {style : any}) => {return <Image source={require('../static/book/1/page(6).png')}/> }
+        },
+        {
+            soundPlay : Audio.Sound.createAsync(require('../static/book/1/sound/page7.mp3')),
+            PageImage : (props : {style : any}) => {return <Image source={require('../static/book/1/page(7).png')}/> }
         },
     ]      
     const [sound, setSound] = useState<SoundObject | null>();
@@ -56,11 +65,18 @@ export function BookA() {
         }   
         : undefined     
     }, [sound]);
+
+    now.soundPlay ? now.soundPlay
+    .then(obj => {
+        obj.sound.playAsync();
+        setSound(obj);
+    })
+    : () => {setSound(null)};    
     
     return(
         <View>
             <TouchableHighlight onPress={nextPage}>
-                { now.imgElement }
+                <now.PageImage style={style.page}/>
             </TouchableHighlight>
         </View>
     );
