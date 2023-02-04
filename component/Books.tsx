@@ -17,9 +17,9 @@ export function BookA() {
         image : {
             width : '100%',
             height : '100%',
-            resizeMode : 'cover',
+            resizeMode : 'contain',
             justifyContent : "center",
-            margin : 10
+            // margin : 10
         }
     });
     const story : IPage[] = [
