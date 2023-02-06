@@ -125,8 +125,81 @@ const storyA : IPage[] = [
 const storyB : IPage[] = [
     {
         imgElement : <Image style={style.image} source={require('../static/book/2/slide1.png')}/>,
-        sound : require('../static/book/1/sound/page28.mp3')
-    }
+        sound : require('../static/book/2/sound/title.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide2.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide3.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide4.png')}/>,
+        sound : require('../static/book/2/sound/slide4.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide5.png')}/>,
+        sound : require('../static/book/2/sound/slide5.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide6.png')}/>,
+        sound : require('../static/book/2/sound/slide6.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide7.png')}/>,
+        sound : require('../static/book/2/sound/slide7.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide8.png')}/>,
+        sound : require('../static/book/2/sound/slide8.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide9.png')}/>,
+        sound : require('../static/book/2/sound/slide9.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide10.png')}/>,
+        sound : require('../static/book/2/sound/slide10.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide11.png')}/>,
+        sound : require('../static/book/2/sound/slide11.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide12.png')}/>,
+        sound : require('../static/book/2/sound/slide12.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide13.png')}/>,
+        sound : require('../static/book/2/sound/slide13.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide14.png')}/>,
+        sound : require('../static/book/2/sound/slide14.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide15.png')}/>,
+        sound : require('../static/book/2/sound/slide15.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide16.png')}/>,
+        sound : require('../static/book/2/sound/slide16.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide17.png')}/>,
+        sound : require('../static/book/2/sound/slide17.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide18.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide19.png')}/>,
+        sound : require('../static/book/2/sound/slide19.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/2/slide20.png')}/>,
+    },
+
 ]
 export function Story(props : {storyId : number}) {
     const getStory = (storyId : number) => {
