@@ -146,11 +146,27 @@ export function BookA() {
             console.log(error);
         }
     }    
-    const nextPage = () => {           
+    const nextPage = () => {
+        if(page + 1 >= story.length) {
+            return;
+        }
         setNow({...story[page + 1]});        
         playNext();
         setPage(page+1)
     }
+    const titlePlay = () => {
+        if(story[0].sound) {
+            const instance = new Audio.Sound();
+            instance.loadAsync(story[0].sound, {shouldPlay : true}, false)
+            .then(()=>{
+                player.current = instance;
+                instance.playAsync();
+            });
+
+        }        
+    }
+    useEffect(titlePlay,[]);
+    
     
     return(
         <View>
