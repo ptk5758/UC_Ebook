@@ -4,22 +4,22 @@ interface Book {
   id : number;
   title : string;
   clickEvent : Function;
+  thum : any;
 }
 export default function Home({navigation} : any) {
-  const data = [
-    {id : 0, title : "고집센 도토리", content : "TEST"},
-    {id : 1, title : "고집센 도토리", content : "TEST"},
-    {id : 2, title : "고집센 도토리", content : "TEST"},
-    {id : 3, title : "고집센 도토리", content : "TEST"}
-  ];
-  function selectBook(_id :number) {
+    function selectBook(_id :number) {
     navigation.navigate('book', {id : _id});
   }
+  const data : Book[] = [
+    {id : 0, title : "고집센 도토리", thum:require('../static/book/1/thum.png'), clickEvent:selectBook},
+    {id : 1, title : "고집센 도토리", thum:require('../static/book/2/thum.png'), clickEvent:selectBook},
+    
+  ];
   return (
     <View style={styles.container}>
       <FlatList
         data={data}
-        renderItem={({item}) => <Book id={item.id} title={"고집센 도토리"} clickEvent={selectBook}/>}
+        renderItem={({item}) => <Book id={item.id} title={"고집센 도토리"} clickEvent={selectBook} thum={item.thum}/>}
       />
       
     </View>
@@ -30,9 +30,9 @@ function Book(props : Book) {
     <View style={styles.book}>      
       <TouchableHighlight onPress={()=>{props.clickEvent(props.id)}}>
         <Image
-            source={require('../static/book/1/thum.png')}
+            source={props.thum}
             style={{width: 180, height: 180}}          
-          />        
+          />
       </TouchableHighlight>      
       <Text style={{fontWeight : 'bold', paddingTop : 12}}>{props.title}</Text>        
     </View>
