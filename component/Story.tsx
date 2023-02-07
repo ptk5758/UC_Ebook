@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { View, Text, TouchableHighlight, Image, StyleSheet } from "react-native";
 import { Audio } from 'expo-av';
+import { lockAsync, OrientationLock } from 'expo-screen-orientation'
+
 
 interface IPage {
     imgElement : JSX.Element;
@@ -315,7 +317,14 @@ export function Story(props : {storyId : number}) {
 
         }        
     }
-    useEffect(titlePlay,[]);
+    const setScreen = () => {
+        lockAsync(OrientationLock.LANDSCAPE);
+        return () => {
+            lockAsync(OrientationLock.DEFAULT);            
+        }
+    }
+    useEffect(setScreen,[]);
+    useEffect(titlePlay,[]);    
     useEffect(()=>{
         return ()=>{            
             if(player.current) {
