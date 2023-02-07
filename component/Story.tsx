@@ -337,6 +337,56 @@ const storyD : IPage[] = [
     },
     
 ]
+const storyE : IPage[] = [
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide1.png')}/>,
+        sound : require('../static/book/5/sound/slide1.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide2.png')}/>,
+        sound : require('../static/book/5/sound/slide2.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide3.png')}/>,
+        sound : require('../static/book/5/sound/slide3.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide4.png')}/>,
+        sound : require('../static/book/5/sound/slide4.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide5.png')}/>,
+        sound : require('../static/book/5/sound/slide5.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide6.png')}/>,
+        sound : require('../static/book/5/sound/slide6.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide7.png')}/>,
+        sound : require('../static/book/5/sound/slide7.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide8.png')}/>,
+        sound : require('../static/book/5/sound/slide8.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide9.png')}/>,
+        sound : require('../static/book/5/sound/slide9.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide10.png')}/>,
+        sound : require('../static/book/5/sound/slide10.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide11.png')}/>,
+        sound : require('../static/book/5/sound/slide11.wav')
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/5/slide12.png')}/>,
+        sound : require('../static/book/5/sound/slide12.wav')
+    },
+]
 export function Story(props : {storyId : number, isHorizontal : boolean}) {
     const getStory = (storyId : number) => {
         switch(props.storyId) {
@@ -348,6 +398,8 @@ export function Story(props : {storyId : number, isHorizontal : boolean}) {
                 return storyC;
             case 3 :
                 return storyD;
+            case 4 :
+                return storyE;
             default:
                 return storyA;            
         }
