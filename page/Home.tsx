@@ -14,7 +14,8 @@ export default function Home({navigation} : any) {
   const data : Book[] = [
     {id : 0, title : "고집센 도토리", thum:require('../static/book/1/thum.png'), clickEvent:selectBook, isHorizontal: false},
     {id : 1, title : "우리는 돌멩이", thum:require('../static/book/2/thum.png'), clickEvent:selectBook, isHorizontal: false},
-    {id : 2, title : "나뭇잎", thum:require('../static/book/3/thum.png'), clickEvent:selectBook, isHorizontal: false},
+    {id : 2, title : "나뭇잎", thum:require('../static/book/3/thum.png'), clickEvent:selectBook, isHorizontal: false},    
+    {id : 3, title : "흙탕물", thum:require('../static/book/4/thum.png'), clickEvent:selectBook, isHorizontal: true},    
     
   ];
   return (
