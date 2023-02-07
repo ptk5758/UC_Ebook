@@ -3,6 +3,7 @@ import { View, Text, TouchableHighlight, Image } from "react-native";
 import { Story } from "../component/Story";
 interface Book {
     id : number;
+    isHorizontal : boolean;
 }
 
 export default function(props : any) {            
@@ -16,7 +17,7 @@ export default function(props : any) {
     // }
     return(
         <View>
-            <Story storyId={book.id}/>
+            <Story storyId={book.id} isHorizontal={book.isHorizontal}/>
         </View>
     );
 }

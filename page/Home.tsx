@@ -5,22 +5,23 @@ interface Book {
   title : string;
   clickEvent : Function;
   thum : any;
+  isHorizontal : boolean;
 }
 export default function Home({navigation} : any) {
-    function selectBook(_id :number) {
-    navigation.navigate('book', {id : _id});
+    function selectBook(_id :number, _isHorizontal : boolean) {
+    navigation.navigate('book', {id : _id, isHorizontal : _isHorizontal});
   }
   const data : Book[] = [
-    {id : 0, title : "고집센 도토리", thum:require('../static/book/1/thum.png'), clickEvent:selectBook},
-    {id : 1, title : "우리는 돌멩이", thum:require('../static/book/2/thum.png'), clickEvent:selectBook},
-    {id : 2, title : "나뭇잎", thum:require('../static/book/3/thum.png'), clickEvent:selectBook},
+    {id : 0, title : "고집센 도토리", thum:require('../static/book/1/thum.png'), clickEvent:selectBook, isHorizontal: false},
+    {id : 1, title : "우리는 돌멩이", thum:require('../static/book/2/thum.png'), clickEvent:selectBook, isHorizontal: false},
+    {id : 2, title : "나뭇잎", thum:require('../static/book/3/thum.png'), clickEvent:selectBook, isHorizontal: false},
     
   ];
   return (
     <View style={styles.container}>
       <FlatList
         data={data}
-        renderItem={({item}) => <Book id={item.id} title={"고집센 도토리"} clickEvent={selectBook} thum={item.thum}/>}
+        renderItem={({item}) => <Book id={item.id} title={"고집센 도토리"} clickEvent={selectBook} thum={item.thum} isHorizontal={item.isHorizontal}/>}
       />
       
     </View>
@@ -29,7 +30,7 @@ export default function Home({navigation} : any) {
 function Book(props : Book) {
   return(
     <View style={styles.book}>      
-      <TouchableHighlight onPress={()=>{props.clickEvent(props.id)}}>
+      <TouchableHighlight onPress={()=>{props.clickEvent(props.id, props.isHorizontal)}}>
         <Image
             source={props.thum}
             style={{width: 180, height: 180}}          

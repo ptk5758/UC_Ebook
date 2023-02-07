@@ -263,7 +263,7 @@ const storyC : IPage[] = [
     },
 
 ]
-export function Story(props : {storyId : number}) {
+export function Story(props : {storyId : number, isHorizontal : boolean}) {
     const getStory = (storyId : number) => {
         switch(props.storyId) {
             case 0 :
@@ -318,13 +318,15 @@ export function Story(props : {storyId : number}) {
         }        
     }
     const setScreen = () => {
+        if(!props.isHorizontal)
+            return ()=>{}
         lockAsync(OrientationLock.LANDSCAPE);
         return () => {
             lockAsync(OrientationLock.DEFAULT);            
         }
     }
     useEffect(setScreen,[]);
-    useEffect(titlePlay,[]);    
+    useEffect(titlePlay,[]);
     useEffect(()=>{
         return ()=>{            
             if(player.current) {
