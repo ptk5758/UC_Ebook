@@ -316,6 +316,13 @@ export function Story(props : {storyId : number}) {
         }        
     }
     useEffect(titlePlay,[]);
+    useEffect(()=>{
+        return ()=>{            
+            if(player.current) {
+                player.current.unloadAsync();
+            }
+        }
+    });
     return(
         <View>
             <TouchableHighlight style={style.panel} onPress={nextPage}>
