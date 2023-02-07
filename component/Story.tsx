@@ -387,6 +387,66 @@ const storyE : IPage[] = [
         sound : require('../static/book/5/sound/slide12.wav')
     },
 ]
+const storyF : IPage[] = [
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide1.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide2.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide3.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide4.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide5.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide6.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide7.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide8.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide9.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide10.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide11.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide12.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide13.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide14.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide15.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide16.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide17.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide18.png')}/>,
+    },
+    {
+        imgElement : <Image style={style.image} source={require('../static/book/6/slide19.png')}/>,
+    },
+    
+]
 export function Story(props : {storyId : number, isHorizontal : boolean}) {
     const getStory = (storyId : number) => {
         switch(props.storyId) {
@@ -400,6 +460,8 @@ export function Story(props : {storyId : number, isHorizontal : boolean}) {
                 return storyD;
             case 4 :
                 return storyE;
+            case 5 : 
+                return storyF;
             default:
                 return storyA;            
         }

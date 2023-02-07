@@ -16,7 +16,8 @@ export default function Home({navigation} : any) {
     {id : 1, title : "우리는 돌멩이", thum:require('../static/book/2/thum.png'), clickEvent:selectBook, isHorizontal: false},
     {id : 2, title : "나뭇잎", thum:require('../static/book/3/thum.png'), clickEvent:selectBook, isHorizontal: false},    
     {id : 3, title : "흙탕물", thum:require('../static/book/4/thum.png'), clickEvent:selectBook, isHorizontal: true},    
-    {id : 4, title : "플라스틱 컵, 로미와 떠나는 모험", thum:require('../static/book/5/thum.png'), clickEvent:selectBook, isHorizontal: true},    
+    {id : 4, title : "플라스틱 컵, 로미와 떠나는 모험", thum:require('../static/book/5/thum.png'), clickEvent:selectBook, isHorizontal: true},
+    {id : 5, title : "모두 날 싫어해", thum:require('../static/book/6/thum.png'), clickEvent:selectBook, isHorizontal: true},
     
   ];
   return (
