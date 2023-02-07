@@ -9,8 +9,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="home" component={Home}/>
-        <Stack.Screen name="book" component={Book}/>
+        <Stack.Screen name="home" component={Home} options={{title : "Home"}}/>
+        <Stack.Screen name="book" component={Book} options={{title : "동화"}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
